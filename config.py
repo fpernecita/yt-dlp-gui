@@ -5,7 +5,7 @@ Stores default settings and paths
 import os
 
 # Default download directory (change path as desired)
-DEFAULT_DOWNLOAD_PATH = os.path.join(os.path.expanduse("~"), "Downloads", "yt-dlp")
+DEFAULT_DOWNLOAD_PATH = os.path.join(os.path.expanduser("~"), "Downloads", "yt-dlp")
 
 # path to ffmpeg when in specific location; write None if using system PATH
 FFMPEG_PATH = r"C:\ytdl\ffmpeg.exe" # location of the ffmpeg script
