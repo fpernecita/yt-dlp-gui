@@ -6,6 +6,14 @@ from config import DEFAULT_DOWNLOAD_PATH
 
 class YtDlpGUI:
     def __init__(self, root):
+        self.root = root
+        self.root.title("yt-dlp Audio Downloader")
+        self.root.geometry("600x400")
+
+        self.downloader = Downloader()
+        self.downloader.set_progress_callback(self.update_progress)
+
+        self.create_widgets()
 
     def create_widgets():
         
