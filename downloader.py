@@ -13,4 +13,10 @@ class Downloader:
 
     def set_progress_callback(self, callback):
         # call back function for progress updates
-        self.progress_callback = callback
+        self.progress_callback = callback 
+    
+    def _progress_hook(self, d):
+    
+        if self.progress_callback:
+            if d['status'] == 'downloading':
+                progress_info = {}
