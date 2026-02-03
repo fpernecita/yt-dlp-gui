@@ -17,6 +17,14 @@ class YtDlpGUI:
 
     def create_widgets():
         # create all the widgets
+                # Main frame with padding
+        main_frame = ttk.Frame(self.root, padding="20")
+        main_frame.grid(row=0, column=0, sticky=(tk.W, tk.E, tk.N, tk.S))
+        
+        # Configure grid weights for responsiveness
+        self.root.columnconfigure(0, weight=1)
+        self.root.rowconfigure(0, weight=1)
+        main_frame.columnconfigure(1, weight=1)
         
         
     def browse_folder():
