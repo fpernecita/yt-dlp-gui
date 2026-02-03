@@ -16,3 +16,6 @@ DEFAULT_AUDIO_FORMAT = "mp3"
 # audio quality 0-9 (best to worst)
 AUDIO_QUALITY = "0"
 
+#create download path if it does not exist
+if not os.path.exists(DEFAULT_DOWNLOAD_PATH):
+    os.makedirs(DEFAULT_DOWNLOAD_PATH)
