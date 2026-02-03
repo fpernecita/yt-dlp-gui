@@ -19,4 +19,11 @@ class Downloader:
     
         if self.progress_callback:
             if d['status'] == 'downloading':
-                progress_info = {}
+                progress_info = {
+                    # Extract progress info
+                    'status': 'downloading',
+                    'percent': d.get('_percent_str', '0%'),
+                    'speed': d.get('_speed_str', 'N/A'),
+                    'eta': d.get('_eta_str', 'N/A')
+                }
+                
