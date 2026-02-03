@@ -11,6 +11,6 @@ class Downloader:
         self.download_path == download_path or DEFAULT_DOWNLOAD_PATH
         self.progress_callback = None
 
-    def set_progress_callback(self, d):
+    def set_progress_callback(self, callback):
         # call back function for progress updates
         self.progress_callback = callback
