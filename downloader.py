@@ -3,7 +3,7 @@ Downloader module
 """
 
 import yt_dlp
-from config import AUDIO_QUALITY, DEFAULT_DOWNLOAD_PATH, FFMPEG_PATH, DEFAULT_AUDIO_FORMAT, 
+from config import AUDIO_QUALITY, DEFAULT_DOWNLOAD_PATH, FFMPEG_PATH, DEFAULT_AUDIO_FORMAT 
 
 class Downloader:
     def __init__(self, download_path=None):
