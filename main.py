@@ -15,7 +15,7 @@ class YtDlpGUI:
         # call widget creation
         self.create_widgets()
 
-    def create_widgets():
+    def create_widgets(self):
         # create all the widgets
                 # Main frame with padding
         main_frame = ttk.Frame(self.root, padding="20")
