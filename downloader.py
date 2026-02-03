@@ -27,4 +27,7 @@ class Downloader:
                     'eta': d.get('_eta_str', 'N/A')
                 }
                 self.progress_callback(progress_info)
+
+            elif d['status'] == 'finish':
+                self.progress_callback({'status': 'finished', 'message': 'Download complete, converting...'})
                 
