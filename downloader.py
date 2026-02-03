@@ -30,4 +30,6 @@ class Downloader:
 
             elif d['status'] == 'finish':
                 self.progress_callback({'status': 'finished', 'message': 'Download complete, converting...'})
-                
+
+    def download_audio(self, url, audio_format=None):
+        
