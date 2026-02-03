@@ -40,7 +40,16 @@ class YtDlpGUI:
         browse_btn = ttk.Button(main_frame, text="Browse", command=self.browse_folder)
         browse_btn.grid(row=1, column=2, padx=(5, 0), pady=5)
         
+        # Audio format selection
+        ttk.Label(main_frame, text="Format:").grid(row=2, column=0, sticky=tk.W, pady=5)
+        self.format_var = tk.StringVar(value="mp3")
+        format_combo = ttk.Combobox(main_frame, textvariable=self.format_var, 
+                                     values=["mp3", "m4a", "wav", "flac"], 
+                                     state="readonly", width=10)
+        format_combo.grid(row=2, column=1, sticky=tk.W, pady=5)
+    
         
+
     def browse_folder():
     
     def update_progress():
