@@ -26,6 +26,11 @@ class YtDlpGUI:
         self.root.rowconfigure(0, weight=1)
         main_frame.columnconfigure(1, weight=1)
         
+                # URL input
+        ttk.Label(main_frame, text="Video URL:").grid(row=0, column=0, sticky=tk.W, pady=5)
+        self.url_entry = ttk.Entry(main_frame, width=50)
+        self.url_entry.grid(row=0, column=1, columnspan=2, sticky=(tk.W, tk.E), pady=5)
+        
         
     def browse_folder():
     
