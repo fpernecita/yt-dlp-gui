@@ -12,3 +12,7 @@ FFMPEG_PATH = r"C:\ytdl\ffmpeg.exe" # location of the ffmpeg script
 
 # default audio format
 DEFAULT_AUDIO_FORMAT = "mp3"
+
+# audio quality 0-9 (best to worst)
+AUDIO_QUALITY = "0"
+
