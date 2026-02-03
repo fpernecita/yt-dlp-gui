@@ -48,7 +48,31 @@ class YtDlpGUI:
                                      state="readonly", width=10)
         format_combo.grid(row=2, column=1, sticky=tk.W, pady=5)
     
+                # Download button
+        self.download_btn = ttk.Button(main_frame, text="Download", 
+                                       command=self.start_download)
+        self.download_btn.grid(row=3, column=0, columnspan=3, pady=20)
         
+                # Progress bar
+        self.progress_bar = ttk.Progressbar(main_frame, mode='indeterminate', length=400)
+        self.progress_bar.grid(row=4, column=0, columnspan=3, pady=10)
+        
+        # Status label
+        self.status_label = ttk.Label(main_frame, text="Ready", foreground="blue")
+        self.status_label.grid(row=5, column=0, columnspan=3, pady=5)
+        
+        # Info text
+        info_text = tk.Text(main_frame, height=6, width=60, wrap=tk.WORD)
+        info_text.grid(row=6, column=0, columnspan=3, pady=10)
+        info_text.insert(tk.END, 
+            "Instructions:\n"
+            "1. Paste the video URL\n"
+            "2. Choose where to save the file\n"
+            "3. Select audio format\n"
+            "4. Click Download\n"
+            "\nNote: Make sure yt-dlp is installed (pip install yt-dlp)")
+        info_text.config(state=tk.DISABLED)
+
 
     def browse_folder():
     
