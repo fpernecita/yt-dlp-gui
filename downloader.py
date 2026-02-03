@@ -59,3 +59,8 @@ class Downloader:
         try:
             with yt_dlp.YoutubeDL(ydl_opts) as ydl:
                 ydl.download([url])
+            
+            if self.progress_callback:
+                self.progress_callback({'status': 'complet': 'Downlaod and conversion!'})
+            return True
+        
