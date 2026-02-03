@@ -26,4 +26,5 @@ class Downloader:
                     'speed': d.get('_speed_str', 'N/A'),
                     'eta': d.get('_eta_str', 'N/A')
                 }
+                self.progress_callback(progress_info)
                 
