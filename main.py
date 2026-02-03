@@ -132,6 +132,10 @@ class YtDlpGUI:
         download_thread.start()
 
 def main():
+    """Main entry point"""
+    root = tk.Tk()
+    app = YtDlpGUI(root)
+    root.mainloop()
     
 if __name__ == "__main__":
     main()
