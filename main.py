@@ -9,13 +9,15 @@ class YtDlpGUI:
         self.root = root
         self.root.title("yt-dlp Audio Downloader")
         self.root.geometry("600x400")
-
+        # initialise downloader
         self.downloader = Downloader()
         self.downloader.set_progress_callback(self.update_progress)
-
+        # call widget creation
         self.create_widgets()
 
     def create_widgets():
+        # create all the widgets
+        
         
     def browse_folder():
     
