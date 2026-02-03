@@ -10,3 +10,6 @@ class Downloader:
         # downloader with custom download path
         self.download_path == download_path or DEFAULT_DOWNLOAD_PATH
         self.progress_callback = None
+
+    def set_progress_callback(self, d):
+        
