@@ -108,7 +108,28 @@ class YtDlpGUI:
     
 
     def start_download(self):
-
+        """Start the download in a separate thread"""
+        url = self.url_entry.get().strip()
+        
+        if not url:
+            messagebox.showwarning("Warning", "Please enter a video URL")
+            return
+        
+        # Update downloader path
+        self.downloader.download_path = self.path_entry.get()
+        
+        # Disable button and start progress
+        self.download_btn.config(state=tk.DISABLED)
+        self.progress_bar.start()
+        self.status_label.config(text="Starting download...", foreground="blue")
+        
+        # Run download in separate thread to prevent GUI freezing
+        download_thread = threading.Thread(
+            target=self.downloader.download_audio,
+            args=(url, self.format_var.get()),
+            daemon=True
+        )
+        download_thread.start()
 
 def main():
     
