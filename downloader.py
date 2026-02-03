@@ -32,4 +32,12 @@ class Downloader:
                 self.progress_callback({'status': 'finished', 'message': 'Download complete, converting...'})
 
     def download_audio(self, url, audio_format=None):
+        """
+        download and convert audio
         
+        Args:
+            url: URL of the video to download
+            audio format: Audio format (default from config)
+        
+        Returns:
+        """
