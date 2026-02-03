@@ -2,7 +2,7 @@
 Downloader module
 """
 
-import yt-dlp
+import yt_dlp
 from config import AUDIO_QUALITY, DEFAULT_DOWNLOAD_PATH, FFMPEG_PATH, DEFAULT_AUDIO_FORMAT, 
 
 class Downloader:
@@ -42,7 +42,7 @@ class Downloader:
         Returns:
         """
         # yt-dlp options
-        ytdl_opts = {
+        ydl_opts = {
             'format': 'bestaudio/best',
             'outtmpl': f'{self.download_path}/%(title)s.%(ext)s',
             'postprocessors': [{
@@ -54,4 +54,8 @@ class Downloader:
 
         #Add ffmpeg location if specified
         if FFMPEG_PATH:
-            ytdl_opts['ffmpeg_loaction'] = FFMPEG_PATH
+            ydl_opts['ffmpeg_loaction'] = FFMPEG_PATH
+
+        try:
+            with yt_dlp.YoutubeDL(ydl_opts) as ydl:
+                ydl.download([url])
