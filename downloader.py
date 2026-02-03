@@ -8,7 +8,7 @@ from config import AUDIO_QUALITY, DEFAULT_DOWNLOAD_PATH, FFMPEG_PATH, DEFAULT_AU
 class Downloader:
     def __init__(self, download_path=None):
         # downloader with custom download path
-        self.download_path == download_path or DEFAULT_DOWNLOAD_PATH
+        self.download_path = download_path or DEFAULT_DOWNLOAD_PATH
         self.progress_callback = None
 
     def set_progress_callback(self, callback):
