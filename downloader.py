@@ -12,4 +12,5 @@ class Downloader:
         self.progress_callback = None
 
     def set_progress_callback(self, d):
-        
+        # call back function for progress updates
+        self.progress_callback = callback
