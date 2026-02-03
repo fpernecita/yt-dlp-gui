@@ -74,7 +74,12 @@ class YtDlpGUI:
         info_text.config(state=tk.DISABLED)
 
 
-    def browse_folder():
+    def browse_folder(self):
+        """Open folder browser dialog"""
+        folder = filedialog.askdirectory(initialdir=self.path_entry.get())
+        if folder:
+            self.path_entry.delete(0, tk.END)
+            self.path_entry.insert(0, folder)
     
     def update_progress():
 
