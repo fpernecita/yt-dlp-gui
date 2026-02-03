@@ -7,5 +7,8 @@ import os
 # Default download directory (change path as desired)
 DEFAULT_DOWNLOAD_PATH = os.path.join(os.path.expanduse("~"), "Downloads", "yt-dlp")
 
+#
 FFMPEG_PATH = r"C:\ytdl\ffmpeg.exe" # location of the ffmpeg script
 
+# default audio format
+DEFAULT_AUDIO_FORMAT = "mp3"
