@@ -81,7 +81,31 @@ class YtDlpGUI:
             self.path_entry.delete(0, tk.END)
             self.path_entry.insert(0, folder)
     
-    def update_progress():
+    def update_progress(self, info):
+
+        """Update progress bar and status label"""
+        status = info.get('status')
+        
+        if status == 'downloading':
+            self.status_label.config(
+                text=f"Downloading: {info.get('percent', '0%')} | "
+                     f"Speed: {info.get('speed', 'N/A')} | "
+                     f"ETA: {info.get('eta', 'N/A')}",
+                foreground="blue"
+            )
+        elif status == 'finished':
+            self.status_label.config(text=info.get('message', 'Processing...'), foreground="orange")
+        elif status == 'complete':
+            self.progress_bar.stop()
+            self.status_label.config(text=info.get('message', 'Complete!'), foreground="green")
+            self.download_btn.config(state=tk.NORMAL)
+            messagebox.showinfo("Success", "Download completed successfully!")
+        elif status == 'error':
+            self.progress_bar.stop()
+            self.status_label.config(text=info.get('message', 'Error'), foreground="red")
+            self.download_btn.config(state=tk.NORMAL)
+            messagebox.showerror("Error", info.get('message', 'An error occurred'))
+    
 
     def start_download(self):
 
