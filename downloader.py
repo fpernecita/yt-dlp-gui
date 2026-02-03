@@ -41,6 +41,8 @@ class Downloader:
         
         Returns:
         """
+        audio_format = audio_format or DEFAULT_AUDIO_FORMAT
+
         # yt-dlp options
         ydl_opts = {
             'format': 'bestaudio/best',
