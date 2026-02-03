@@ -26,10 +26,19 @@ class YtDlpGUI:
         self.root.rowconfigure(0, weight=1)
         main_frame.columnconfigure(1, weight=1)
         
-                # URL input
+        # URL input
         ttk.Label(main_frame, text="Video URL:").grid(row=0, column=0, sticky=tk.W, pady=5)
         self.url_entry = ttk.Entry(main_frame, width=50)
         self.url_entry.grid(row=0, column=1, columnspan=2, sticky=(tk.W, tk.E), pady=5)
+        
+        # Download path
+        ttk.Label(main_frame, text="Save to:").grid(row=1, column=0, sticky=tk.W, pady=5)
+        self.path_entry = ttk.Entry(main_frame, width=40)
+        self.path_entry.insert(0, DEFAULT_DOWNLOAD_PATH)
+        self.path_entry.grid(row=1, column=1, sticky=(tk.W, tk.E), pady=5)
+        
+        browse_btn = ttk.Button(main_frame, text="Browse", command=self.browse_folder)
+        browse_btn.grid(row=1, column=2, padx=(5, 0), pady=5)
         
         
     def browse_folder():
