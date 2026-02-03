@@ -42,7 +42,7 @@ class Downloader:
         Returns:
         """
         # yt-dlp options
-        dl_opts = {
+        ytdl_opts = {
             'format': 'bestaudio/best',
             'outtmpl': f'{self.download_path}/%(title)s.%(ext)s',
             'postprocessors': [{
@@ -51,3 +51,7 @@ class Downloader:
                 'preferredquality': AUDIO_QUALITY,
             }]
         }
+
+        #Add ffmpeg location if specified
+        if FFMPEG_PATH:
+            ytdl_opts['ffmpeg_loaction'] = FFMPEG_PATH
