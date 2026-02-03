@@ -3,7 +3,7 @@ Downloader module
 """
 
 import yt-dlp
-from config import DEFAULT_DOWNLOAD_PATH, FFMPEG_PATH, DEFAULT_AUDIO_FORMAT, 
+from config import AUDIO_QUALITY, DEFAULT_DOWNLOAD_PATH, FFMPEG_PATH, DEFAULT_AUDIO_FORMAT, 
 
 class Downloader:
     def __init__(self, download_path=None):
@@ -41,3 +41,13 @@ class Downloader:
         
         Returns:
         """
+        # yt-dlp options
+        dl_opts = {
+            'format': 'bestaudio/best',
+            'outtmpl': f'{self.download_path}/%(title)s.%(ext)s',
+            'postprocessors': [{
+                'key': 'FFmpegExtractAudio',
+                'preferredcodec': audio_format,
+                'preferredquality': AUDIO_QUALITY,
+            }]
+        }
