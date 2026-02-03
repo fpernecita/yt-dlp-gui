@@ -61,6 +61,9 @@ class Downloader:
                 ydl.download([url])
             
             if self.progress_callback:
-                self.progress_callback({'status': 'complet': 'Downlaod and conversion!'})
+                self.progress_callback({'status': 'complete', 'message': 'Download and conversion!'})
             return True
         
+        except Exception as e:
+            if self.progress_callback:
+                self.progress_callback({'status': 'error', 'message': f'Error: {str(e)}'})
